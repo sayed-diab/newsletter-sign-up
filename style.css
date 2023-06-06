@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap');
+:root {
+  --main-color: hsl(234, 29%, 20%);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--main-color);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+.contant-container {
+  position: relative;
+  background-color: white;
+  margin: 100px auto;
+  width: fit-content;
+  display: flex;
+  padding: 30px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  gap: 30px;
+}
+
+.contant-container .mobile {
+  display: none;
+}
+
+.contant-container.success {
+  flex-direction: column;
+  gap: 0;
+  padding: 20px 40px 40px;
+}
+.contant-container.success img {
+  height: 64px;
+  width: fit-content;
+}
+.contant {
+  max-width: 450px;
+  padding: 30px;
+  color: hsl(235, 18%, 26%);
+}
+.contant h1 {
+  color: var(--main-color);
+  font-size: 60px;
+  margin: 30px auto;
+}
+.contant-container.success .contant h1 {
+  font-weight: 700;
+  line-height: 1;
+}
+.contant span {
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.contant ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding: 20px 0;
+}
+.contant ul li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+.contant ul li img {
+  padding-right: 12px;
+}
+.contant form {
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+form .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+.contant form .label #error {
+  color: #e01e1e;
+  visibility: hidden;
+}
+form[data-write='true'] .label #error {
+  visibility: visible;
+}
+form input,
+.btn {
+  padding: 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+form input {
+  border: 1px solid #ccc;
+  outline: 1px solid rgb(255, 255, 255);
+}
+form input:focus {
+  outline: 1px solid black;
+}
+form input::placeholder {
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+form input:focus::placeholder {
+  opacity: 0;
+}
+form[data-write='true'] input.active {
+  background-color: #f4d7d5;
+  border: 1px solid #e01e1e;
+}
+form[data-write='true'] input.active::placeholder {
+  color: #e01e1e;
+  font-size: 16px;
+}
+.btn {
+  background-color: var(--main-color);
+  color: white;
+  width: 100%;
+  font-weight: 700;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  place-content: center;
+  position: relative;
+  z-index: 1;
+}
+.contant-container.success .btn {
+  margin-top: 50px;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-image: linear-gradient(to right, #ff5377, #fc9b56);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  z-index: -1;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  opacity: 0;
+}
+.btn:hover::before {
+  opacity: 1;
+}
+.f {
+  display: flex;
+  place-content: center;
+  color: white;
+  padding-bottom: 20px;
+}
+.f a {
+  color: #e01e1e;
+  padding: 0px 5px;
+  text-decoration: none;
+}
+.f a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 575px) {
+  .contant-container {
+    flex-direction: column;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    gap: 0;
+  }
+  .contant-container .desktop {
+    display: none;
+  }
+  .contant-container .mobile {
+    display: block;
+    min-width: 100%;
+  }
+  .contant {
+    width: 100%;
+    padding: 0px 30px;
+  }
+  .contant h1 {
+    font-size: 40px;
+    margin: 30px 0 20px;
+  }
+  .contant ul {
+    padding: 0 0 20px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .f {
+    color: black;
+    font-size: 12px;
+    padding: 15px 0 8px;
+    background-color: white;
+  }
+  .contant-container.success {
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+  .contant-container.success .contant {
+    margin-top: 150px;
+  }
+  .contant-container.success .btn {
+    max-width: calc(100% - 60px);
+    margin: 50px auto 20px;
+  }
+}
